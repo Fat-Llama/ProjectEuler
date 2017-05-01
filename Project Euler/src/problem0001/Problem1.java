@@ -1,27 +1,27 @@
 package problem0001;
 
+import java.util.List;
+import java.util.Stack;
+
+import math.Math;
 
 public class Problem1
 {
-	
-	public static void main(String[] args)
+	public static int sumMultiplesOfXAndYInZ(int x, int y, int z)
 	{
-		int maxTestInteger = 1000;
+		int max_test_integer = z;
+		int multiple_one = x;
+		int multiple_two = y;
 		
-		int[] multiples = new int[maxTestInteger];
-		for(int i = 0; i < maxTestInteger; i++)
+		List<Integer> multiples = new Stack<>();;
+		for (int i = 1; i < max_test_integer; i++)
 		{
-			if(Math.isXMultipleY(i, 3) || Math.isXMultipleY(i, 5))
+			if (Math.isXMultipleOfY(multiple_one, i) || Math.isXMultipleOfY(multiple_two, i))
 			{
-				multiples[i] = i;
-			}
-			else
-			{
-				multiples[i] = 0;
+				multiples.add(i);
 			}
 		}
 		
-		System.out.println(Math.sumOf(multiples));
+		return Math.sumOfIntegers(multiples);
 	}
-	
 }

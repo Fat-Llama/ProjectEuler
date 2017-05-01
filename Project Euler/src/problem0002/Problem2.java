@@ -2,19 +2,18 @@ package problem0002;
 
 import java.util.List;
 import java.util.function.Predicate;
+import math.Math;
 
 public class Problem2
 {
-	
-	public static void main(String[] args)
+	public static int sumEvenFibonacciSequence(int maxValue)
 	{
-		int doNotExceed = 4000000;
+		int doNotExceed = maxValue;
 		int sum = 0;
 		
-		List<Integer> fibonacciSequence = Math.fibonacciToX(doNotExceed);
+		List<Integer> fibonacciSequence = Math.fibonacciToIntegerX(doNotExceed);
 		Predicate<Integer> predicate = new Predicate<Integer>()
 		{
-			
 			@Override
 			public boolean test(Integer t)
 			{
@@ -22,7 +21,7 @@ public class Problem2
 			}
 		};
 		fibonacciSequence.removeIf(predicate);
-		sum = Math.sumOf(fibonacciSequence);
-		System.out.println(sum);
+		sum = Math.sumOfIntegers(fibonacciSequence);
+		return sum;
 	}
 }

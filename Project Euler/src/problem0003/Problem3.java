@@ -1,11 +1,13 @@
 package problem0003;
 
+import math.Math;
+
 public class Problem3
 {
 	
-	public static void main(String[] args)
+	public static Long getLargestPrimMultipleOfX(Long x)
 	{
-		Long test_number = 600851475143L;
+		Long test_number = x;
 		
 		for (Long i = 1L; i <= test_number / 2; i++)
 		{
@@ -14,10 +16,10 @@ public class Problem3
 				long factor = test_number / i;
 				if(Math.isPrimeNumber(factor))
 				{
-					System.out.println(factor);
-					break;
+					return factor;
 				}
 			}
 		}
+		return null;
 	}
 }

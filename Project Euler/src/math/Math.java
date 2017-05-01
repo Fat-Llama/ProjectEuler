@@ -1,4 +1,4 @@
-package problem0003;
+package math;
 
 import java.util.List;
 import java.util.Stack;
