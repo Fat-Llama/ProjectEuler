@@ -5,22 +5,25 @@ import java.util.Stack;
 
 import math.Math;
 
+/**
+ * Collects X and Y multiples of a number Z.
+ * For example multiples of 3(X) in 1000(Y) as
+ * well as multiples of 5(5) in 1000(Y) are collected.
+ * 
+ * The multiples are then summed and returned to the user.
+ * 
+ * @author Conno_000
+ *
+ */
 public class Problem1
 {
-	public static int sumMultiplesOfXAndYInZ(int x, int y, int z)
+	public static int getSolution(int x, int y, int z)
 	{
-		int max_test_integer = z;
-		int multiple_one = x;
-		int multiple_two = y;
+		List<Integer> divisors = new Stack<>();
+		divisors.add(x);
+		divisors.add(y);
 		
-		List<Integer> multiples = new Stack<>();;
-		for (int i = 1; i < max_test_integer; i++)
-		{
-			if (Math.isXMultipleOfY(multiple_one, i) || Math.isXMultipleOfY(multiple_two, i))
-			{
-				multiples.add(i);
-			}
-		}
+		List<Integer> multiples = Math.getMultiples(divisors, z);
 		
 		return Math.sumOfIntegers(multiples);
 	}

@@ -2,18 +2,23 @@ package problem0003;
 
 import math.Math;
 
+/**
+ * Returns the largest prime number
+ * that is a multiple of X.
+ * 
+ * @author Conno_000
+ *
+ */
 public class Problem3
 {
 	
-	public static Long getLargestPrimMultipleOfX(Long x)
+	public static Long getSolution(Long x)
 	{
-		Long test_number = x;
-		
-		for (Long i = 1L; i <= test_number / 2; i++)
+		for (Long i = 1L; i <= x / 2; i++)
 		{
-			if (Math.isXMultipleOfY(i, test_number))
+			if (Math.isMultiple(x, i))
 			{
-				long factor = test_number / i;
+				long factor = x / i;
 				if(Math.isPrimeNumber(factor))
 				{
 					return factor;
