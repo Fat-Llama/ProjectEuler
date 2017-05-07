@@ -1,5 +1,7 @@
 package math;
 
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -39,6 +41,54 @@ public class Math
 			return false;
 	}
 	
+	public static List<Integer> getAllMultiples(int x)
+	{
+		List<Integer> multiples = new Stack<>();
+		List<Integer> tempMultiples = new LinkedList<>();
+		
+		int result = x;
+		
+		for (int i = 1; i < result; i++)
+		{
+			if (Math.isMultiple(x, i))
+			{
+				result = x / i;
+				multiples.add(i);
+				tempMultiples.add(result);
+			}
+		}
+		Collections.reverse(tempMultiples);
+		for (Integer i : tempMultiples)
+		{
+			multiples.add(i);
+		}
+		return multiples;
+	}
+	
+	public static List<Long> getAllMultiples(long x)
+	{
+		List<Long> multiples = new Stack<>();
+		List<Long> tempMultiples = new LinkedList<>();
+		
+		long result = x;
+		
+		for (Long i = 1L; i < result; i++)
+		{
+			if (Math.isMultiple(x, i))
+			{
+				result = x / i;
+				multiples.add(i);
+				tempMultiples.add(result);
+			}
+		}
+		Collections.reverse(tempMultiples);
+		for (Long i : tempMultiples)
+		{
+			multiples.add(i);
+		}
+		return multiples;
+	}
+	
 	public static List<Integer> getMultiples(List<Integer> divisors, int x)
 	{
 		List<Integer> multiples = new Stack<>();
@@ -54,6 +104,16 @@ public class Math
 			}
 		}
 		return multiples;
+	}
+	
+	private static List<Integer>	primes	= new Stack<>();
+	static
+	{
+		primes.add(1);
+		primes.add(2);
+		primes.add(3);
+		primes.add(5);
+		primes.add(7);
 	}
 	
 	public static boolean isPrimeNumber(int x)
